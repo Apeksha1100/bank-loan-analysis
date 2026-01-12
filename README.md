@@ -183,7 +183,7 @@ Loan exposure is concentrated in select states.
 Due to GitHub file size limitations, the **Excel dashboard file and screenshots** are hosted externally.
 
 📎 **Project Files & Screenshots**
-👉 *(Add your Google Drive link here)*
+👉 *https://drive.google.com/drive/folders/1B3nA9ib_yVbSkk26YBR3iA0va4wPCmJe?usp=sharing*
 
 ## 👤 Author
 
