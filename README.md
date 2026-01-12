@@ -193,11 +193,3 @@ Aspiring Data Analyst | Excel | SQL | Power BI | Tableau
 ## ⭐ Support This Project
 
 If you found this project useful, please **⭐ star the repository** — it helps showcase my work to recruiters.
-
-
-
-* Interview questions & answers based on *your exact dashboard*
-* A shorter GitHub README version
-* Help naming KPIs & charts professionally
-
-Just tell me 💙
