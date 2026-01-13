@@ -130,7 +130,6 @@ Interactive visuals include:
 
   * Year
   * Month
-  * Loan Purpose
 
 * All KPIs and charts update dynamically based on selections
 
