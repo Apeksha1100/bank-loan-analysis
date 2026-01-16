@@ -1,198 +1,221 @@
 # bank-loan-analysis
-# 🏦 Bank Loan Data Analytics Dashboard (Excel)
+# 🏦 Bank Loan Analytics Dashboard
+**(Excel | SQL | Power BI)**
 
 ## 📌 Project Overview
 
-This project presents an **end-to-end Bank Loan Data Analytics Dashboard** built using **Microsoft Excel**, designed to convert raw loan data into **meaningful business and risk insights**.
+This project presents an **end-to-end Bank Loan Data Analytics Dashboard** designed to analyze **loan disbursement, repayment behavior, portfolio quality, and risk indicators** using **Excel, SQL, and Power BI**.
 
-The dashboard enables stakeholders to analyze:
+The dashboard enables banks and financial stakeholders to **monitor loan performance, identify default and delinquency risks, track collections, and analyze trends across time, geography, and customer segments**.
 
-* Loan disbursement performance
-* Portfolio risk (default & delinquency)
-* Product and geographic exposure
-* Overall loan portfolio health
+The solution is built from a **Data Analyst perspective**, focusing on **decision-making insights rather than just visual design**.
+
+---
 
 ## 🛠 Tools & Technologies Used
 
 * **Microsoft Excel**
-* **Power Query** – Data cleaning & feature engineering
-* **Power Pivot** – Data modeling
-* **DAX** – Measures & KPIs
-* **Pivot Tables & Pivot Charts**
-* **Excel Slicers**
-* **Filled Map Charts**
+
+  * Data cleaning & preprocessing
+  * Pivot Tables & Pivot Charts
+  * KPI calculations
+
+* **SQL**
+
+  * Data extraction & transformation
+  * Joins, aggregations, filtering
+  * Business-driven analytical queries
+
+* **Power BI**
+
+  * Interactive dashboards & KPIs
+  * DAX measures
+  * Drill-down & slicers
+
+---
 
 ## 📂 Dataset Description
 
-The dataset contains **loan-level banking information**, including:
+The dataset contains **loan-level banking data**, including:
 
-* Account and client details
-* Loan disbursement details
-* Loan amount, interest, and collection
-* Loan status indicators
-* Product, grade, and maturity details
-* Geographic information (State, Branch)
+* Loan ID & Account details
+* Loan amount & funded amount
+* Interest amount
+* Collection amount
+* Loan status (Active, Fully Paid, NPA, Default, etc.)
+* Product codes
+* Credit grades
+* Loan maturity period
+* State & branch details
+* Disbursement date
 
-## 🔄 Data Cleaning & Feature Engineering (Power Query)
+---
 
-Data preparation was carried out in **Power Query**, focusing on **data completeness and risk analytics readiness**.
+## 🧹 Data Cleaning & Transformation
 
-### 1️⃣ Duplicate & Data Quality Checks
+Data preparation was performed using **Excel & SQL** to ensure accuracy and consistency.
 
-* Verified uniqueness of **Account IDs**
-* Checked for missing and inconsistent values
-* Ensured reliable records for analysis
-  
-### 2️⃣ Handling Missing Values
+### 1️⃣ Duplicate & Missing Value Handling
 
-Missing values were handled carefully to preserve data integrity:
+* Removed duplicate loan records
+* Handled missing values in grade, maturity, and state fields
 
-* **Borrower Age (`Age_T`)**
+### 2️⃣ Column Standardization
 
-  * Blank values replaced with the **median age**
-  * Prevented bias and distortion in age-related analysis
+* Renamed columns for **business readability**
+* Standardized categorical values (Loan Status, Product Codes, Grades)
 
-* **Disbursement Officer (`Disb By`)**
+### 3️⃣ Date & Time Processing
 
-  * Blank values replaced with **"UNKNOWN"**
-  * Ensured complete officer-wise and operational analysis
-    
-### 3️⃣ Risk & Status Feature Creation
+* Converted disbursement dates to proper date format
+* Created **Year and Month columns** for trend analysis
 
-To support risk analysis and KPI calculations, the following **derived columns** were created:
+### 4️⃣ Calculated Fields
 
-* **Account Status**
+* Interest collected
+* Default loan rate
+* Delinquent loan rate
+* Verified vs Non-verified loans
 
-  * Represents the current state of each loan account
-  * Used for status-wise portfolio monitoring
+---
 
-* **Delinquent Flag**
+## 🧱 Data Modeling
 
-  * Binary indicator identifying delinquent loans
-  * Used directly in delinquent loan rate calculations
+* Structured fact and dimension tables
 
-* **Default Flag**
+* Created relationships between:
 
-  * Binary indicator identifying defaulted loans
-  * Used in default rate KPIs and risk segmentation
+  * Loan data
+  * Date
+  * State
+  * Product & Grade
 
-These flags simplify complex logic and improve **clarity, performance, and explainability** of the data model.
+* Built optimized DAX measures for KPIs
 
-### 4️⃣ Business-Oriented Data Modeling
+---
 
-* Risk flags were positioned **alongside their corresponding KPIs**
-* Improved:
+## 📊 Key KPIs
 
-  * Measure readability
-  * Dashboard transparency
-  * Stakeholder understanding
+The dashboard tracks the following business-critical metrics:
 
-✔ This approach emphasizes **business relevance over unnecessary transformations**.
+* **Total Loans Issued**
+* **Total Loan Amount**
+* **Total Interest Earned**
+* **Total Collection Amount**
+* **Default Loan Rate**
+* **Delinquent Loan Rate**
+* **Unverified Loans Percentage**
 
-## 🧠 Data Modeling & DAX Calculations
+---
 
-* Built relationships using **Power Pivot**
-* Created DAX measures to compute:
+## 📈 Visualizations & Analysis
 
-  * Total Loans
-  * Total Loan Amount
-  * Total Collection
-  * Total Interest
-  * Default Loan Rate
-  * Delinquent Loan Rate
+The dashboard includes:
 
-## 📊 Key Performance Indicators (KPIs)
+* 📉 **Loan Disbursement Trend (Monthly / Yearly)**
+* 🗺 **State-wise Loan Distribution**
+* 🏷 **Loan Status Breakdown** (Active, Paid, NPA, Default)
+* 🧾 **Product-wise Loan Funding**
+* 🏦 **Branch-wise Loan Performance**
+* 🎓 **Grade-wise Loan Distribution**
+* ⏳ **Maturity-wise Loan Analysis**
 
-The dashboard highlights:
-
-* Total Loans Issued
-* Total Loan Amount Disbursed
-* Total Interest Earned
-* Total Collection
-* Default Loan Rate
-* Delinquent Loan Rate
-* Unverified Loan Percentage
-
-## 📈 Visualizations
-
-Interactive visuals include:
-
-* **Loan Disbursement Trend** – Line Chart
-* **State-wise Loan Distribution** – Filled Map
-* **Product-wise Loan Analysis** – Bar Chart
-* **Loan Status Distribution** – Donut Chart
-* **Grade-wise Loan Distribution** – Horizontal Bar Chart
-* **Maturity-wise Loan Split** – Treemap
+---
 
 ## 🎛 Interactive Features
 
-* Slicers for:
+* Dynamic slicers for:
 
   * Year
   * Month
+  * State
+  * Product
+  * Loan Status
 
-* All KPIs and charts update dynamically based on selections
+* Drill-down enabled across charts
+
+* KPIs update automatically based on filters
+
+---
 
 ## 💡 Business Insights & Recommendations
 
-### 1️⃣ Loan Disbursement Trends
+### 1️⃣ Loan Portfolio Health
 
-Disbursement patterns show **seasonal fluctuations**, indicating predictable demand cycles.
+A significant portion of loans falls under **longer maturity periods**, contributing to higher interest earnings but increased risk exposure.
 
 **Recommendation:**
-
-* Align campaigns with high-demand periods
-* Optimize operational readiness
+Balance long-term loans with shorter maturity products to reduce portfolio risk.
 
 ---
 
-### 2️⃣ Product & Portfolio Concentration
+### 2️⃣ Default & Delinquency Risk
 
-Certain loan products contribute a major share of total loan value.
+Certain **credit grades and regions** show higher default and delinquency rates.
 
 **Recommendation:**
-
-* Continue promoting strong products
-* Reduce concentration risk through diversification
+Strengthen credit assessment and monitoring for high-risk segments.
 
 ---
 
-### 3️⃣ Default & Delinquency Risk
+### 3️⃣ Product Performance
 
-Specific segments exhibit higher default and delinquency exposure.
+A small number of products contribute to the **majority of loan disbursements**.
 
 **Recommendation:**
-
-* Apply targeted risk controls
-* Strengthen post-disbursement monitoring
+Focus marketing and optimization strategies on top-performing loan products.
 
 ---
 
-### 4️⃣ Geographic Exposure
+### 4️⃣ Geographic Concentration
 
-Loan exposure is concentrated in select states.
+Loan funding is concentrated in a few states and branches.
 
 **Recommendation:**
+Diversify lending across regions to minimize concentration risk.
 
-* Expand cautiously into underrepresented regions
-* Balance geographic risk
+---
+
+## 🧠 Overall Strategic Insight
+
+This analysis demonstrates how **structured data analytics can help financial institutions**:
+
+* Improve loan portfolio monitoring
+* Detect early risk signals
+* Optimize lending strategies
+* Support data-driven decision-making
+
+The dashboard provides a **single source of truth** for loan performance and risk evaluation.
+
+---
 
 ## 📸 Dashboard Preview
 
-![Bank Loan Analytics Dashboard](bank-excel-dashboard.png)
+### 🔹 Power BI Dashboard
+
+*![Power BI Dashboard](bank-loan-powerbi-dashboard.png)*
+
+### 🔹 Excel Dashboard
+
+*![Excel Dashboard](bank-excel-dashboard.png)*
+
+---
 
 ## 📁 Project Files
 
-Due to GitHub file size limitations, the **Excel dashboard file** are hosted externally.
+📂 **Dashboard Files & SQL Scripts:**
+*https://drive.google.com/drive/folders/1B3nA9ib_yVbSkk26YBR3iA0va4wPCmJe?usp=drive_link*
 
-📎 **Project File**
-👉 *https://drive.google.com/drive/folders/1B3nA9ib_yVbSkk26YBR3iA0va4wPCmJe?usp=sharing*
+---
 
 ## 👤 Author
 
 **Apeksha Sonawane**
-Aspiring Data Analyst | Excel | SQL | Power BI | Tableau
+Aspiring Data Analyst | Business Analytics | SQL | Power BI | Excel
 
-## ⭐ Support This Project
+⭐ *If you find this project useful, please consider starring the repository — it helps recruiters discover my work!*
 
-If you found this project useful, please **⭐ star the repository** — it helps showcase my work to recruiters.
+---
+
+
+Just say the word 💙
