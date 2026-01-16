@@ -216,6 +216,3 @@ Aspiring Data Analyst | Business Analytics | SQL | Power BI | Excel
 ⭐ *If you find this project useful, please consider starring the repository — it helps recruiters discover my work!*
 
 ---
-
-
-Just say the word 💙
